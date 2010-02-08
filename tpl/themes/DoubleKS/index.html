@@ -1,4 +1,4 @@
-{% include 'header.html' %}
+﻿{% include 'header.html' %}
 <body onload="setupZoom()">
 	<div id="page">
 		<div id="header">
@@ -14,11 +14,20 @@
 			  {% include 'sidebar.html' %}
 			  <div class="wrapper-content">
 				  {% if page_archive %}
-				  <div class="header">This is the complete archive of this blog, totally {{ articles_total }} articles.</div>
+				  <div class="tip">This is the complete archive of this blog, totally <span class="archive-count">{{ articles_total }}</span> articles.</div>
 				  {% endif %}
 				  {% for article in articles %}
-				  {% if article.title %}<h2>{% if article.title_link%}<a href="{{ article.title_link }}" target="_blank">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}</h2>{% endif %}
-				  <div class="misc">{{ article.created|date:"Y-m-d H:i:s" }}&nbsp;<a href="/{{ article.title_url }}" class="img" title="Permalink to {{ article.title|escape }}">&nbsp;<img src="/static/shared/link.png" border="0" align="absmiddle" alt="Permalink to {{ article.title|escape }}" class="permaicon" />&nbsp;</a></div>
+				  {% if article.title %}
+          <h2>
+          <a href="/{{ article.title_url }}" title="Permalink to {{ article.title|escape }}">{{ article.title }}</a>
+          {% if article.title_link%}
+            <a href="{{ article.title_link }}" target="_blank" title="Title Link: {{ article.title_link }}">
+              <img src="/static/themes/doubleks/images/external-small.png" alt="{{ article.title_link }}" class="permaicon" />
+            </a>     
+          {% endif %}
+          </h2>
+          {% endif %}
+				  <div class="misc">{{ article.created|date:"Y-m-d H:i:s" }}</div>
 				  {% if forloop.last %}
 				  <div class="content tail">
 				  {% else %}

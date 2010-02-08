@@ -1,37 +1,43 @@
 {% include 'header.html' %}
 <body onload="setupZoom()">
 	<div id="page">
-		<div id="Top"><a href="/" class="img"><img src="/static/themes/default/logo.png" alt="Project Picky" id="Logo" /></a></div>
-		{% include 'sidebar.html' %}
-		<div id="Main">
-			<div class="inner">
-				{% if article.title %}<div class="title">{% if parent %}<a href="/{{ parent.title_url }}">{{ parent.title }}</a> &nbsp;»&nbsp; {% endif %}{% if article.title_link%}<a href="{{ article.title_link }}" target="_blank">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}</div>{% endif %}
-				<div class="content">
-					{% ifequal article.format 'markdown' %}
-						{{ article.content_formatted }}
-					{% else %}
-						{% ifequal article.format 'txt' %}
-							{{ article.content|linebreaksbr }}
-						{% else %}
-							{{ article.content }}
-						{% endifequal %}
-					{% endifequal %}
-					<div class="misc">Published on {{ article.created|date:"M-j G:i" }}</div>
-					<!--
-					<div id="Ads">
-						<script type="text/javascript"><!--
-						google_ad_client = "pub-9823529788289591";
-						/* Picky Banner, Per Article, 468x60 */
-						google_ad_slot = "7266198519";
-						google_ad_width = 468;
-						google_ad_height = 60;
-						//-->
-						</script>
-						<script type="text/javascript"
-						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-						</script>
-					</div>
-					-->
+		<div id="header">
+		  <div class="wrapper-header">
+		    <a href="/" class="img">
+		      <img src="/static/themes/doubleks/images/logo_top.png" alt="Caizpark" id="logo" />
+		    </a>
+		    <a href="{{ feed_url }}" class="rssfeed">RssFeed</a>
+		  </div>
+		</div>
+		<div id="main">
+			<div class="wrapper-main">
+			  {% include 'sidebar.html' %}
+			  <div class="wrapper-content">
+				  {% if article.title %}
+          <h2>{{ article.title }}
+          {% if article.title_link%}
+            <a href="{{ article.title_link }}" target="_blank" title="Title Link: {{ article.title_link }}">
+              <img src="/static/themes/doubleks/images/external-small.png" alt="{{ article.title_link }}" class="permaicon" />
+            </a>     
+          {% endif %}
+          </h2>
+          {% endif %}
+				  <div class="misc">{{ article.created|date:"Y-m-d H:i:s" }}</div>
+				  {% if forloop.last %}
+				  <div class="content tail">
+				  {% else %}
+				  <div class="content">
+				  {% endif %}
+				  {% ifequal article.format 'markdown' %}
+					  {{ article.content_formatted }}
+				  {% else %}
+					  {% ifequal article.format 'txt' %}
+						  {{ article.content|linebreaksbr }}
+					  {% else %}
+						  {{ article.content }}
+					  {% endifequal %}
+				  {% endifequal %}
+				  </div>
 				</div>
 			</div>
 		</div>
