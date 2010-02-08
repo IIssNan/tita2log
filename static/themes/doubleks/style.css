@@ -1,0 +1,117 @@
+html,body,div,span,p,h1,h2,h3,h4,h5,h6,table,tr,td,fieldset,legend,ul,ol,li,img,frameset,input,label,textarea,dl,dt,dd{margin:0;padding:0;}
+
+a{outline:none;}
+a img{border:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6{margin:15px 0; font-family:STHeiti,"微软雅黑",Sans;}
+code{font-family: consolas, courier, sans-serif;}
+
+body{
+  font:62.5%/1.5 "Lucida Grande",Verdana, Arial, Sans-serif;
+  /*font:10px Verdana,"Bitstream Vera Sans",Arial,sans-serif*/
+}
+
+
+/** ---------- header ----------- **/
+
+#header{
+  background:url(/static/themes/doubleks/images/header_bg.png) repeat-x 0 0;
+}
+.wrapper-header{
+  position:relative;
+  margin:0 auto;
+  width:960px;
+  height:147px;
+  background:url(/static/themes/doubleks/images/trees_top.png) no-repeat 75% 40%;
+}
+#logo{
+  position:absolute;
+  top:10px;
+  left: 10px;
+}
+.rssfeed{
+  display:block;
+  position:absolute;
+  top:0;
+  right: 40px;
+  width:95px;
+  height:20px;
+  text-indent:-9999px;
+  background:url(/static/themes/doubleks/images/rssfeed.png) no-repeat 0 0;
+}
+/** ---------- main ----------- **/
+#main{}
+.wrapper-main{
+  margin:0 auto;
+  width:960px;
+  min-height:600px;
+}
+.wrapper-content{padding:20px; }
+  .wrapper-content h2{
+    margin-bottom:0;
+    width:690px;
+    font:bold 24px STHeiti,"微软雅黑",Sans;
+    color:#fe4365;
+  }
+  .wrapper-content .misc{
+     margin:5px 0 15px 10px; font-size:1.1em; color:#999;
+   }
+   .wrapper-content .misc a{text-decoration:none;}
+  .wrapper-content .misc img{border:none !important;}
+  .content{margin:0 10px; width:710px;font-size:1.4em; color:#666;}
+  .content h3{font-size:17px;}
+  .content h4{font-size:15px;}
+  .content h5{font-size:13px;}
+  .content h6{font-size:13px;}
+  .content p{line-height:1.6em;}
+  .content a{color:fe4365;text-decoration:none;}
+  .content code{
+    display:block;
+    padding:10px; 
+    background:#f3f6f1;border:1px solid #dde7d7;
+  }
+  .content blockquote{
+    padding-left:15px; 
+    background:url(/static/themes/doubleks/images/blockquote.png) no-repeat 0 0;
+    color:#888;
+  }
+  .content ul, .content ol{margin:0 20px;}
+  .content ul li{list-style:square;}
+  .content img{padding:3px; border:1px solid #dde7d7;}
+  .content img:hover{border:1px solid #aecd99;}
+.wrapper-sidebar{float:right;width:170px;margin:35px 10px;}
+.wrapper-sidebar h2{font:italic bold 25px Gerogia, sans;color:#fe4365;}
+.wrapper-sidebar ul{margin:0 20px; font-size:1.1em}
+.wrapper-sidebar li{padding-left:10px; background:url(/static/themes/doubleks/images/li_red.png) no-repeat 0 50%;}
+
+.wrapper-content .pagination{
+  margin:20px 0 10px;
+  padding:8px;
+  width:130px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border:1px solid #ddd;
+  background:#dde7d7;
+  font-size:1.4em;
+}
+.wrapper-content .pagination a{
+  color:#777;
+  text-decoration:none;
+}
+.wrapper-content .pagination a:hover{
+  color:#fe4365;
+}
+
+/** ---------- footer ----------- **/
+#footer{}
+.wrapper-footer{}
+.footside{
+  
+}
+.cr{
+  padding:15px;
+  background:#01212e;
+  color:#f5f3e4;
+}
+.wrapper-cr{margin:0 auto;width:960px;}
+.cr a{color:#fe4365}
