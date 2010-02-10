@@ -16,8 +16,9 @@
 				  {% if article.title %}
           <h2>{{ article.title }}
           {% if article.title_link%}
-            <a href="{{ article.title_link }}" target="_blank" title="Title Link: {{ article.title_link }}">
+            <a href="{{ article.title_link }}" target="_blank" class="title-link">
               <img src="/static/themes/doubleks/images/external-small.png" alt="{{ article.title_link }}" class="permaicon" />
+              <span>{{article.title_link}}</span>
             </a>     
           {% endif %}
           </h2>
