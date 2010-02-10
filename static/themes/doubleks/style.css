@@ -57,10 +57,14 @@ body{
     width:610px;
     font-size:1.4em;
   }
-  .wrapper-content h2{margin-bottom:0; color:#47b0a9;font:bold 24px STHeiti,"微软雅黑",Sans;}
+  .wrapper-content h2{
+    margin-bottom:0; 
+    color:#47b0a9;
+    font:bold 24px "Lucida Grande","微软雅黑",Sans-serif;
+  }
   .wrapper-content h2 a{
     width:690px;
-    font:bold 24px STHeiti,"微软雅黑",Sans;
+    font:bold 24px "Lucida Grande","微软雅黑",Sans-serif;
     color:#fe4365;
     text-decoration:none;
   }
@@ -68,7 +72,11 @@ body{
     text-decoration:underline;
   }
   .wrapper-content .misc{
-     margin:5px 0 15px 10px; font-size:1.1em; color:#999;
+     margin:5px 0 15px 10px; 
+     font-size:1.1em; 
+     color:#999;
+     padding-left: 18px;
+     background:url("/static/themes/doubleks/images/calendar.png") no-repeat 0 50%;
    }
    .wrapper-content .title-link{position:relative; z-index:15;}
    .wrapper-content .title-link span{display:none;}
@@ -109,7 +117,7 @@ body{
     padding:5px; 
     background:#f3f6f1;
     border:1px solid #dde7d7;
-    font-size:0.8em;
+    font-size:1.1em;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
   }
@@ -177,7 +185,7 @@ body{
   color:#83AF9B;
   font-family:Georgia;
   font-size:22px;
-  margin:5px 0 5px 15px;
+  margin:0 0 5px 15px;
 }
 
 .cr{
