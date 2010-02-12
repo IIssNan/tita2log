@@ -29,6 +29,13 @@ body{
   top:10px;
   left: 10px;
 }
+.slogan{
+  position:absolute;
+  top:78px;
+  left:100px;
+  font:italic 12px Georgia,"Times New Roman",Sans;
+  color:#B2CDC1;
+}
 .rssfeed{
   display:block;
   position:absolute;
