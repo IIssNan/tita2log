@@ -17,11 +17,14 @@
 				  {% if article.title %}
           <h2>{{ article.title }}&nbsp;
           {% if article.title_link%}
-            <a href="{{ article.title_link }}" target="_blank" class="title-link">
-              <img src="/static/themes/doubleks/images/external-small.png" alt="{{ article.title_link }}" class="permaicon" />
-              <span>Title Link: {{article.title_link}}</span>
-            </a>     
-          {% endif %}
+			<a href="{{ article.title_link }}" target="_blank" class="title-link">
+				<img src="/static/themes/doubleks/images/title_link.png" alt="Title Link" class="permaicon" />
+				<span class="wrapper-titlelink">
+					<strong>Title Link:&nbsp;</strong> 
+					<span>{{article.title_link}}</span>
+				</span>
+			</a>     
+			{% endif %}
           </h2>
           {% endif %}
 				  <div class="misc">{{ article.created|date:"Y-m-d H:i:s" }}</div>

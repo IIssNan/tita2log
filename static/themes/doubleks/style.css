@@ -86,23 +86,33 @@ body{
      background:url("/static/themes/doubleks/images/calendar.png") no-repeat 0 50%;
    }
    .wrapper-content .title-link{position:relative; z-index:15; text-decoration:none;}
-   .wrapper-content .title-link span{display:none;}
-   .wrapper-content .title-link span strong{font-style:normal; font-weight:bold;}
-   .wrapper-content .title-link:hover{z-index:16;}
-   .wrapper-content .title-link:hover span{
-     background:url("/static/themes/doubleks/images/title_linkbg.png") no-repeat scroll 0 0 transparent;
-		 display:none;
-		 display:block;
-		 font-size:12px;
-		 height:33px;
-		 left:-10px;
-		 padding:5px 10px;
-		 position:absolute;
-		 top:-25px;
-		 width:316px;
-		 color:#121212;
-		 font:italic 12px georgia,verdana,sans-serif;
-   }
+   .wrapper-content .title-link .wrapper-titlelink{
+     display:none;
+	 overflow:hidden;
+	 width:400px;
+	 height:33px;
+	 left:-10px;
+	 padding:6px 10px;
+	 position:absolute;
+	 top:-25px;
+	 color:#666;
+	 font:italic 11px georgia,verdana,sans-serif;
+	 background:url("/static/themes/doubleks/images/title_linkbg.png") no-repeat scroll 0 0 transparent;
+	}
+	.wrapper-content .title-link .wrapper-titlelink span{
+	  display:block; 
+	  float:left; 
+	  height:15px; 
+	  overflow:hidden; 
+	  width:220px;
+	  white-space:nowrap;
+	  text-overflow:ellipsis;     /* IE, Webkit */
+	  -o-text-overflow: ellipsis; /* Opera */
+	  /* firefox text-overflow  - Unimplemented */
+	}
+   .wrapper-content .title-link .wrapper-titlelink strong{font-size:12px; float:left; font-style:normal; font-weight:bold; color:#222}
+   .wrapper-content .title-link:hover{z-index:16; text-decoration:none;}
+   .wrapper-content .title-link:hover .wrapper-titlelink{display:block;}
   .wrapper-content .misc a{text-decoration:none;}
   .wrapper-content .misc img{border:none !important;}
   .entry{margin:45px 0;}
