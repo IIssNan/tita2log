@@ -224,6 +224,36 @@ body{
   font-size:22px;
   margin:0 0 5px 15px;
 }
+.footside .section .social, .footside .section .about{
+  margin:0 0 5px 35px;
+}
+.social a{
+  display:block; color:#888; 
+  padding:0 5px;
+  text-decoration:none;
+}
+.social a:hover{
+  background-color:#f0eede; 
+  -moz-border-radius: 4px;
+  -webkit-border-raius: 4px;
+}
+.section .twitter,
+.section .delicious,
+.section .flickr,
+.section .yupoo,
+.section .lastfm{
+  background:url("/static/themes/doubleks/images/sprite.png") no-repeat;
+  /*line-height:30px;*/
+  padding:3px 3px 3px 40px;
+  margin:5px 0;
+  height:32px;
+}
+.social .title{font-weight:bold; color:#222;}
+.section .twitter{background-position:0 -100px;}
+.section .delicious{background-position:0 -142px;}
+.section .yupoo{background-position:0 -183px;}
+.section .lastfm{background-position:0 -225px;}
+/*.section .flickr{background-position:0 -153px;}*/
 
 .cr{
   padding:15px;
