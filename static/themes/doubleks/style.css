@@ -7,32 +7,31 @@ h1,h2,h3,h4,h5,h6{margin:15px 0; font-family:STHeiti,"微软雅黑",Sans;}
 code{font-family: consolas, courier, sans-serif;}
 
 body{
-  font:62.5%/1.5 "Lucida Grande",Verdana, Arial, Sans-serif;
-  /*font:10px Verdana,"Bitstream Vera Sans",Arial,sans-serif*/
+  font:62.5%/1.5 "Lucida Grande",Verdana,"Bitstream Vera Sans", Arial, Sans-serif;
 }
 
 
 /** ---------- header ----------- **/
 
 #header{
-  background:url(/static/themes/doubleks/images/header_bg.png) repeat-x 0 0;
+  background:url("/static/themes/doubleks/images/header_bg.png") repeat-x 0 0;
 }
 .wrapper-header{
   position:relative;
   margin:0 auto;
   width:960px;
-  height:147px;
-  background:url(/static/themes/doubleks/images/trees_top.png) no-repeat 75% 40%;
+  height:163px;
+  background:url("/static/themes/doubleks/images/trees_top.png") no-repeat 75% 65%;
 }
 #logo{
   position:absolute;
-  top:10px;
+  top: 30px;
   left: 10px;
 }
 .slogan{
   position:absolute;
-  top:78px;
-  left:100px;
+  top:94px;
+  left:110px;
   font:italic 12px Georgia,"Times New Roman",Sans;
   color:#B2CDC1;
 }
@@ -44,7 +43,7 @@ body{
   width:95px;
   height:20px;
   text-indent:-9999px;
-  background:url(/static/themes/doubleks/images/rssfeed.png) no-repeat 0 0;
+  background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 0;
 }
 /** ---------- main ----------- **/
 #main{}
@@ -54,7 +53,7 @@ body{
   min-height:700px;
   height:auto !important; /* IE min-height Hacks */
   height:700px;
-  background:url(/static/themes/doubleks/images/trees_bottom.png) no-repeat right bottom;
+  background:url("/static/themes/doubleks/images/trees_bottom.png") no-repeat right bottom;
 }
 .wrapper-content{padding:20px; }
   .wrapper-content .tip{
@@ -83,22 +82,24 @@ body{
      font-size:1.1em; 
      color:#999;
      padding-left: 18px;
-     background:url("/static/themes/doubleks/images/calendar.png") no-repeat 0 50%;
+     background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -62px;
    }
-   .wrapper-content .title-link{position:relative; z-index:15; text-decoration:none;}
+   .wrapper-content .title-link{
+     position:relative; z-index:15; text-decoration:none;
+   }
    .wrapper-content .title-link .wrapper-titlelink{
      display:none;
-	 overflow:hidden;
-	 width:400px;
-	 height:33px;
-	 left:-10px;
-	 padding:6px 10px;
-	 position:absolute;
-	 top:-25px;
-	 color:#666;
-	 font:italic 11px georgia,verdana,sans-serif;
-	 background:url("/static/themes/doubleks/images/title_linkbg.png") no-repeat scroll 0 0 transparent;
-	}
+	   overflow:hidden;
+	   width:400px;
+	   height:33px;
+	   left:-9px;
+	   padding:6px 10px;
+	   position:absolute;
+	   top:-30px;
+	   color:#666;
+	   font:italic 11px georgia,verdana,sans-serif;
+	   background:url("/static/themes/doubleks/images/sprite.png") no-repeat -24px -30px;
+	  }
 	.wrapper-content .title-link .wrapper-titlelink span{
 	  display:block; 
 	  float:left; 
@@ -110,9 +111,15 @@ body{
 	  -o-text-overflow: ellipsis; /* Opera */
 	  /* firefox text-overflow  - Unimplemented */
 	}
-   .wrapper-content .title-link .wrapper-titlelink strong{font-size:12px; float:left; font-style:normal; font-weight:bold; color:#222}
-   .wrapper-content .title-link:hover{z-index:16; text-decoration:none;}
-   .wrapper-content .title-link:hover .wrapper-titlelink{display:block;}
+  .wrapper-content .title-link .wrapper-titlelink strong{
+    font-size:12px; 
+    float:left; 
+    font-style:normal; 
+    font-weight:bold; 
+    color:#222;
+   }
+  .wrapper-content .title-link:hover{z-index:16; text-decoration:none;}
+  .wrapper-content .title-link:hover .wrapper-titlelink{display:block;}
   .wrapper-content .misc a{text-decoration:none;}
   .wrapper-content .misc img{border:none !important;}
   .entry{margin:45px 0;}
@@ -121,7 +128,7 @@ body{
   .content a:hover{
     color:#fff; background:#fe4365;
     -moz-border-radius:3px;
-    -webkit-border-radisu:3px;
+    -webkit-border-radius:3px;
   }
   .content a.img_link:hover{background:none;}
   .content h3, .content h4, .content h5, .content h6{margin:5px 0; /*color:#47b0a9;*/}
@@ -134,8 +141,8 @@ body{
   .content pre{margin:5px 0;}
   .content code{
     display:block;
-    padding:5px; 
-    background:#f3f6f1;
+    padding:5px;
+    background:url("/static/themes/doubleks/images/code_bg.gif") repeat 0 0;
     border:1px solid #dde7d7;
     font-size:.9em;
     -moz-border-radius:3px;
@@ -144,7 +151,7 @@ body{
   .content blockquote{
     margin:15px 10px;
     padding-left:15px; 
-    background:url(/static/themes/doubleks/images/blockquote.png) no-repeat 0 0;
+    background:url("/static/themes/doubleks/images/blockquote.png") no-repeat 0 0;
     color:#888;
   }
   .content ul, .content ol{margin:0 20px;}
@@ -163,7 +170,10 @@ body{
 }
 .wrapper-sidebar h2{color:#b2cdc1;font:italic bold 24px Georgia;}
 .wrapper-sidebar ul{margin:0 20px; font-size:1.1em}
-.wrapper-sidebar li{padding-left:10px; background:url(/static/themes/doubleks/images/li_red.png) no-repeat 0 50%;}
+.wrapper-sidebar li{
+  padding-left:15px;
+  background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -80px;
+}
 #side-nav a{color:#fe4365;text-decoration:none}
 #side-nav a:hover{text-decoration:underline;}
 
@@ -190,7 +200,9 @@ body{
 
 /** ---------- footer ----------- **/
 #footer{font-size:1.2em;}
-.wrapper-footer{background:url(/static/themes/doubleks/images/footer_bg.png) repeat-x 0 0;}
+.wrapper-footer{
+  background:url("/static/themes/doubleks/images/footer_bg.png") repeat-x 0 0;
+ }
 .footside{padding:15px;}
 .wrapper-footside{
   margin:0 auto;
@@ -222,7 +234,7 @@ body{
 .cr a{color:#fe4365}
 
 /** ------------ Others --------------- **/
-.o404{font:48px/1.5 bold georgia, Sans-serif; }
+.o404{font:48px/1.5 georgia, Sans; }
 .title-404{font-size:1.4em; color:#f00;}
 .content-404{margin-left:20px;font-size:1.4em;}
 
