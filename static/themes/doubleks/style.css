@@ -1,9 +1,17 @@
 html,body,div,span,p,h1,h2,h3,h4,h5,h6,table,tr,td,fieldset,legend,ul,ol,li,img,frameset,input,label,textarea,dl,dt,dd,blockquote{margin:0;padding:0;}
 
+/* 
+  解决页面内容只适应浏览器窗口大小而产生空白区域 
+  
+  缩小浏览器大小至小于网页内容宽度，此时会产生横向滚动条
+  在未使用display:table的情况下，拖动滚动条至右边会发现有空白区域出现
+*/
+body{display:table; width:100%}
+
 a{outline:none;}
 a img{border:0;}
 li{list-style:none;}
-h1,h2,h3,h4,h5,h6{margin:15px 0; font-family:STHeiti,"微软雅黑",Sans;}
+h1,h2,h3,h4,h5,h6{margin:15px 0; font-family:"微软雅黑",STHeiti,Sans-serif;}
 code{font-family: consolas, courier, sans-serif;}
 
 body{
@@ -53,7 +61,7 @@ body{
   min-height:700px;
   height:auto !important; /* IE min-height Hacks */
   height:700px;
-  background:url("/static/themes/doubleks/images/trees_bottom.png") no-repeat right bottom;
+  /*background:url("/static/themes/doubleks/images/trees_bottom.png") no-repeat right bottom;*/
 }
 .wrapper-content{padding:20px; }
   .wrapper-content .tip{
@@ -116,14 +124,14 @@ body{
     float:left; 
     font-style:normal; 
     font-weight:bold; 
-    color:#222;
+    color:#ff3d3d;
    }
   .wrapper-content .title-link:hover{z-index:16; text-decoration:none;}
   .wrapper-content .title-link:hover .wrapper-titlelink{display:block;}
   .wrapper-content .misc a{text-decoration:none;}
   .wrapper-content .misc img{border:none !important;}
   .entry{margin:45px 0;}
-  .content{margin:0 10px; width:610px;font-size:1.4em; color:#666;}
+  .content{margin:0 10px; width:651px;font-size:1.4em; color:#777;}
   .content a{padding:1px; color:#fe4365;}
   .content a:hover{
     color:#fff; background:#fe4365;
@@ -158,15 +166,20 @@ body{
   .content ul li{list-style:square;}
   .content img{
      margin:15px 0 10px; padding:3px; 
-	 border:1px solid #dde7d7;
-	 -moz-border-radius:4px;
-	 -webkit-border-radus:4px;
+     border:1px solid #dde7d7;
+     -moz-border-radius:4px;
+     -webkit-border-radus:4px;
   }
-  .content img:hover{border:1px solid #aecd99;}
+  .content img:hover{
+    border:1px solid #aecd99;
+    -moz-box-shadow:0 0 7px #ccc;
+    -webkit-box-shadow:0 0 7px #ccc;
+    box-shadow: 0 0 7px #ccc;
+  }
 .wrapper-sidebar{
   float:right;
-  margin:45px 0;
-  width:240px;
+  margin:50px 0;
+  width:160px;
 }
 .wrapper-sidebar h2{color:#b2cdc1;font:italic bold 24px Georgia;}
 .wrapper-sidebar ul{margin:0 20px; font-size:1.1em}
@@ -199,7 +212,28 @@ body{
 }
 
 /** ---------- footer ----------- **/
-#footer{font-size:1.2em;}
+#footer{font-size:1.2em; position:relative;}
+.back-to-top a{
+  display:block;
+  background:url("/static/themes/doubleks/images/sprite.png") no-repeat;
+  text-indent: -9999px;
+}
+.footer-top a{
+  position:absolute;
+  left:1000px;
+  top: -70px;
+  width:40px;
+  height:71px;
+  background-position:0 -270px;
+}
+.bottom-top a{
+  position:absolute;
+  right:10px;
+  top: 20px;
+  width:30px;
+  height:15px;
+  background-position:0 -360px;
+}
 .wrapper-footer{
   background:url("/static/themes/doubleks/images/footer_bg.png") repeat-x 0 0;
  }
@@ -248,7 +282,7 @@ body{
   margin:5px 0;
   height:32px;
 }
-.social .title{font-weight:bold; color:#222;}
+.social .title{font-weight:bold; color:#83af9b;}
 .section .twitter{background-position:0 -100px;}
 .section .delicious{background-position:0 -142px;}
 .section .yupoo{background-position:0 -183px;}
@@ -259,6 +293,7 @@ body{
   padding:15px;
   background:#01212e;
   color:#f5f3e4;
+  position:relative;
 }
 .wrapper-cr{margin:0 auto;width:960px;}
 .cr a{color:#fe4365}
