@@ -65,9 +65,9 @@ body{
 }
 .wrapper-content{padding:20px; }
   .wrapper-content .tip{
-    padding:10px 5px;
-    background:#ffc;
-    border:1px dashed #ccc;
+    padding:10px 8px;
+    background:#E4F1FF;
+    color:#444;
     width:610px;
     font-size:1.4em;
   }
@@ -309,7 +309,17 @@ body{
 /** ------------ 404 --------------- **/
 .o404{font:48px/1.5 georgia, Sans; }
 .title-404{font-size:1.4em; color:#f00;}
-.content-404{margin-left:20px;font-size:1.4em;}
+.content-404-main{margin:15px 0;}
+.content-404{
+  margin-left:20px;
+  font-size:1.4em;
+  background:#ffc;
+  color:#333;
+  padding:5px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+}
 
 /** ------------ Others --------------- **/
 .round{
