@@ -303,13 +303,13 @@ body{
 .wrapper-cr{margin:0 auto;width:960px;}
 .cr a{color:#fe4365}
 
-/** ------------ Others --------------- **/
+/** ------------ archive --------------- **/
+.archive-count{font-size:16px; color:#f00;}
+
+/** ------------ 404 --------------- **/
 .o404{font:48px/1.5 georgia, Sans; }
 .title-404{font-size:1.4em; color:#f00;}
 .content-404{margin-left:20px;font-size:1.4em;}
-
-.archive-count{font-size:16px; color:#f00;}
-
 
 /** ------------ Others --------------- **/
 .round{

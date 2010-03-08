@@ -14,17 +14,18 @@
 			<div class="wrapper-main">
 			  {% include 'sidebar.html' %}
 			  <div class="wrapper-content">
+			    <div class="entry">
 				  {% if article.title %}
           <h2>{{ article.title }}&nbsp;
           {% if article.title_link%}
-			<a href="{{ article.title_link }}" target="_blank" class="title-link">
-				<img src="/static/themes/doubleks/images/title_link.png" alt="Title Link" class="permaicon" />
-				<span class="wrapper-titlelink">
-					<strong>Title Link:&nbsp;</strong> 
-					<span>{{article.title_link}}</span>
-				</span>
-			</a>     
-			{% endif %}
+          <a href="{{ article.title_link }}" target="_blank" class="title-link">
+          <img src="/static/themes/doubleks/images/title_link.png" alt="Title Link" class="permaicon" />
+          <span class="wrapper-titlelink">
+            <strong>Title Link:&nbsp;</strong> 
+            <span>{{article.title_link}}</span>
+          </span>
+          </a>     
+			    {% endif %}
           </h2>
           {% endif %}
 				  <div class="misc">{{ article.created|date:"Y-m-d H:i:s" }}</div>
@@ -43,6 +44,7 @@
 					  {% endifequal %}
 				  {% endifequal %}
 				  </div>
+				  </div><!--entry-->
 				</div>
 			</div>
 		</div>
