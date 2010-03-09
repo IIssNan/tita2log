@@ -11,7 +11,7 @@ body{display:table; width:100%}
 a{outline:none;}
 a img{border:0;}
 li{list-style:none;}
-h1,h2,h3,h4,h5,h6{margin:15px 0; font-family:"微软雅黑",STHeiti,Sans-serif;}
+h1,h2,h3,h4,h5,h6{margin:15px 0; font-family:"微软雅黑","黑体",Sans-serif;}
 code{font-family: consolas, courier, sans-serif;}
 
 body{
@@ -74,11 +74,11 @@ body{
   .wrapper-content h2{
     margin-bottom:0; 
     color:#47b0a9;
-    font:bold 24px "Lucida Grande","微软雅黑",Sans-serif;
+    font:bold 24px "Lucida Grande","微软雅黑","黑体",Sans-serif;
   }
   .wrapper-content h2 a{
     width:690px;
-    font:bold 24px "Lucida Grande","微软雅黑",Sans-serif;
+    font:bold 24px "Lucida Grande","微软雅黑","黑体",Sans-serif;
     color:#fe4365;
     text-decoration:none;
   }
@@ -173,7 +173,7 @@ body{
   .content code{
     display:block;
     font-family:"Monaco","Courier New","Courier",monospace;
-    font-size:11px;
+    font-size:12px;
     line-height:18px;
   }
   .content blockquote{
