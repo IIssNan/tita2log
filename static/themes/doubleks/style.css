@@ -147,6 +147,7 @@ body{
   .content h6{font-size:13px;}
   .content p{line-height:1.6em;}
   .content a{color:fe4365;text-decoration:none;}
+  .content embed{margin:7px 10px;}
   .content .code_wrapper {
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
