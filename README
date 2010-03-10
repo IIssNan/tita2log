@@ -2,6 +2,10 @@ Theme {Dobule Ks} 版本 0.1, 基于Project-Picky 1.9.1制作。
 
 Demo: http://park.v2mac.com
 
+[Theme DoubleKs] 说明：
+文章图片必须加class="img_link"，若有必要可加rel="lightbox"或者rel="shadowbox"显示图片，组图可使用rel="shadowbox[group]"，更多关于Shadowbox的应用查http://www.shadowbox-js.com/usage.html。
+视频使用class="movie"即可。
+
 
 [About Project-Picky]
 
