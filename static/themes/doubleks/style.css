@@ -43,18 +43,20 @@ body{
   font:italic 12px Georgia,"Times New Roman",Sans;
   color:#B2CDC1;
 }
-.rssfeed{
+.feedme a{
   display:block;
   position:absolute;
-  top:0;
+  top:110px;
   right: 40px;
-  width:95px;
-  height:20px;
+  width:89px;
+  height:40px;
   text-indent:-9999px;
-  background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 0;
+  background:url("/static/themes/doubleks/images/feed_original.gif") no-repeat 0 0;
 }
-.feed_catcher{display:none; width:200px;}
-.feed_catcher li{display:inline; float:left; width:95px;}
+.feedme a:hover{background:url("/static/themes/doubleks/images/feed_original_hover.gif") no-repeat 0 0;}
+.feedways{display:none;position:absolute;overflow:hidden;top:45px;right:-95px;width:231px;}
+.feedways li{display:inline;float:left;margin:1px 5px;}
+.feedways li a{display:block;}
 /** ---------- main ----------- **/
 #main{}
 .wrapper-main{
@@ -245,7 +247,7 @@ body{
 }
 .footer-top a{
   position:absolute;
-  left:1000px;
+  right:10px;
   top: -70px;
   width:40px;
   height:71px;
