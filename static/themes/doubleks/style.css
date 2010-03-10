@@ -53,6 +53,8 @@ body{
   text-indent:-9999px;
   background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 0;
 }
+.feed_catcher{display:none; width:200px;}
+.feed_catcher li{display:inline; float:left; width:95px;}
 /** ---------- main ----------- **/
 #main{}
 .wrapper-main{
