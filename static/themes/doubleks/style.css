@@ -149,7 +149,7 @@ body{
   .content h4{font-size:15px;}
   .content h5{font-size:13px;}
   .content h6{font-size:13px;}
-  .content p{line-height:1.6em;}
+  .content p{line-height:1.8em;}
   .content a{color:fe4365;text-decoration:none;}
   .content embed{margin:7px 10px;}
   .content .code_wrapper {
@@ -187,8 +187,9 @@ body{
     background:url("/static/themes/doubleks/images/blockquote.png") no-repeat 0 0;
     color:#888;
   }
-  .content ul, .content ol{margin:0 20px;}
-  .content ul li{list-style:square;}
+  .content ul, .content ol{margin:10px 20px;}
+  .content ul li{list-style:square inside;}
+  .content ol li{list-style:decimal inside;}
   .content img{
      margin:15px 0 10px; padding:3px; 
      border:1px solid #dde7d7;
