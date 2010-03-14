@@ -11,7 +11,7 @@
               <li><strong>Personal Blog:</strong> <a href="http://park.ivanchoi.name">Caizpark</a></li>
               <li><strong>WebDev Blog:</strong> under construction</li>
               <li><strong>WebDev Labs:</strong> under construction</li>
-              <li><strong>Coding 4fun:</strong> <a href="github.com/IIssNan">IIssNan@github</a></li>
+              <li><strong>Coding 4fun:</strong> <a href="http://github.com/IIssNan">IIssNan@github</a></li>
               <li><strong>Contact mail:</strong> iissnan囧gmail.com</li>
               </ul>
               
@@ -85,11 +85,9 @@
   </script>
   <script type="text/javascript" src="/static/themes/doubleks/shadowbox.js"></script>
   <script type="text/javascript">
-    Shadowbox.init({
-    //skipSetup: true
-    });
     
     function loadCompleted(){
+      // back to top 
       $(".back-to-top").click(function(){
         if(jQuery.browser.safari){
           $('body').animate({scrollTop:0});return false;
@@ -98,15 +96,27 @@
         } 
       });
       
+      // feed services
       $(".feedme a").click(function(){$(".feedways").slideToggle();return false;});
       
-       Shadowbox.setup("a.movie", {
-        gallery:            "Movies",
-        autoplayMovies:     true,
-        width:610,
-        height: 498,
-        modal: true
-       });
+      // replace movie with specify image
+      function get_mv2img_link(link_image, link_movie){
+        var re_str =  '<a href="'+link_movie+'" class="img_link movie" rel="shadowbox"><img src="'+link_image+'" alt="movie" /></a>';
+        return re_str;  
+      }
+      $(".movie-wrapper").each(function(){
+        $(this).html(get_mv2img_link($(this).children('embed').attr('rel'), $(this).children('embed').attr('src')))
+      })
+      
+      // Shadowbox
+      Shadowbox.init({});
+      Shadowbox.setup("a.movie", {
+          gallery:            "Movies",
+          autoplayMovies:     true,
+          width:610,
+          height: 498,
+          modal: true
+         });
     }
     google.setOnLoadCallback(loadCompleted);
   </script>
