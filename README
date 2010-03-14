@@ -1,10 +1,17 @@
-Theme {Dobule Ks} 版本 0.1, 基于Project-Picky 1.9.1制作。
+[About Theme DoubleKs]
 
-Demo: http://park.v2mac.com
+Theme {Dobule Ks} 版本 0.2, 基于Project-Picky 1.9.1制作。
 
-[Theme DoubleKs] 说明：
-文章图片必须加class="img_link"，若有必要可加rel="lightbox"或者rel="shadowbox"显示图片，组图可使用rel="shadowbox[group]"，更多关于Shadowbox的应用查http://www.shadowbox-js.com/usage.html。
-视频使用class="movie"即可。
+Demo: http://park.ivanchoi.name
+
+[Theme DoubleKs] 使用几点辅助说明：
+
+1.文章图片必须加class="img_link"，以覆盖a标签的背景样式。
+2.文章图片可在a标签上加rel="lightbox"或者rel="shadowbox"来显示图片，组图可使用rel="shadowbox[group]"。
+3.文章视频外加容器<div class="movie-wrapper"></div>，并在emebd标签上添加属性rel="图片地址"以及class="movie"，
+   用于解决使用ShodowBox显示视频和Rss输出的矛盾。
+
+更多关于Shadowbox的应用查看：http://www.shadowbox-js.com/usage.html。
 
 
 [About Project-Picky]
