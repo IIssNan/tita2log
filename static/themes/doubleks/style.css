@@ -191,14 +191,15 @@ body{
   .content ul li{list-style:square inside;}
   .content ol li{list-style:decimal inside;}
   .content img{
-     margin:15px 0 10px; padding:3px; 
+     margin:15px 0 10px; 
+     /*padding:3px; 
      border:1px solid #dde7d7;
      -moz-border-radius:4px;
      -webkit-border-radius:4px;
-     border-radius:4px;
+     border-radius:4px;*/
   }
   .content img:hover{
-    border:1px solid #aecd99;
+    /*border:1px solid #aecd99;*/
     -moz-box-shadow:0 0 7px #ccc;
     -webkit-box-shadow:0 0 7px #ccc;
     box-shadow: 0 0 7px #ccc;
