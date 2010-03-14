@@ -99,15 +99,6 @@
       // feed services
       $(".feedme a").click(function(){$(".feedways").slideToggle();return false;});
       
-      // replace movie with specify image
-      function get_mv2img_link(link_image, link_movie){
-        var re_str =  '<a href="'+link_movie+'" class="img_link movie" rel="shadowbox"><img src="'+link_image+'" alt="movie" /></a>';
-        return re_str;  
-      }
-      $(".movie-wrapper").each(function(){
-        $(this).html(get_mv2img_link($(this).children('embed').attr('rel'), $(this).children('embed').attr('src')))
-      })
-      
       // Shadowbox
       Shadowbox.init({});
       Shadowbox.setup("a.movie", {

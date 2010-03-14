@@ -8,8 +8,22 @@ Demo: http://park.ivanchoi.name
 
 1.文章图片必须加class="img_link"，以覆盖a标签的背景样式。
 2.文章图片可在a标签上加rel="lightbox"或者rel="shadowbox"来显示图片，组图可使用rel="shadowbox[group]"。
-3.文章视频外加容器<div class="movie-wrapper"></div>，并在emebd标签上添加属性rel="图片地址"以及class="movie"，
-   用于解决使用ShodowBox显示视频和Rss输出的矛盾。
+3.文章视频外加容器<div class="movie-wrapper"></div>与遮盖层<div class="movie-overlay"></a>。
+   
+   [使用Shadowbox显示图片元素示例：]
+   <a href="image-url" class="img_link" rel="stylesheet"><img src="image-url" alt="" title=""/></a>
+   
+   [使用Shadowbox播放视频元素示例：]
+   <div class="movie-wrapper">
+     <div class="movie-overlay">
+       <a href="video-autoplay-url" rel="shadowbox" class="movie"></a>
+     </div>
+     <embed width="600" height="200" type="application/x-shockwave-flash" 
+       allowscriptaccess="sameDomain" quality="high" wmode="Opaque" src="video-url">
+   </div>
+   效果查看：
+
+
 
 更多关于Shadowbox的应用查看：http://www.shadowbox-js.com/usage.html。
 
