@@ -51,9 +51,9 @@ body{
   width:89px;
   height:40px;
   text-indent:-9999px;
-  background:url("/static/themes/doubleks/images/feed_original.gif") no-repeat 0 0;
+  background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -385px;
 }
-.feedme a:hover{background:url("/static/themes/doubleks/images/feed_original_hover.gif") no-repeat 0 0;}
+.feedme a:hover{background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -480px;}
 .feedways{display:none;position:absolute;overflow:hidden;top:45px;right:-95px;width:231px;}
 .feedways li{display:inline;float:left;margin:1px 5px;}
 .feedways li a{display:block;}
@@ -235,9 +235,8 @@ body{
   text-decoration:none;
 }
 .wrapper-content .pagination a:hover{
-  color:#fe4365;
-  background:#fff;
-  border:1px solid #ccc;
+  color:#ffffff;
+  background:#00bcba;
 }
 
 /** ---------- footer ----------- **/
@@ -253,7 +252,13 @@ body{
   top: -70px;
   width:40px;
   height:71px;
+  /* 正确位置 -270px
+     用100px形成隐藏元素 - 纪念小时候的FC游戏时光 :)
   background-position:0 -270px;
+  */
+  background-position:0 100px; 
+
+  
 }
 .bottom-top a{
   position:absolute;
@@ -330,7 +335,7 @@ body{
   color:#f5f3e4;
   position:relative;
 }
-.wrapper-cr{margin:0 auto;width:960px;}
+.wrapper-cr{margin:0 auto;width:908px;}
 .cr a{color:#fe4365}
 
 /** ------------ archive --------------- **/
