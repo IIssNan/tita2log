@@ -12,16 +12,17 @@ Demo: http://park.ivanchoi.name
    
    [使用Shadowbox显示图片元素示例：]
    <a href="image-url" class="img_link" rel="stylesheet"><img src="image-url" alt="" title=""/></a>
+   效果查看：http://park.ivanchoi.name/ivan-choi-name
    
    [使用Shadowbox播放视频元素示例：]
    <div class="movie-wrapper">
      <div class="movie-overlay">
-       <a href="video-autoplay-url" rel="shadowbox" class="movie"></a>
+       <a href="video-autoplay-url" rel="shadowbox[]" class="movie" title=""></a>
      </div>
-     <embed width="600" height="200" type="application/x-shockwave-flash" 
+     <embed width="480" height="392" type="application/x-shockwave-flash" 
        allowscriptaccess="sameDomain" quality="high" wmode="Opaque" src="video-url">
    </div>
-   效果查看：
+   效果查看：http://park.ivanchoi.name/dan-ding
 
 
 
