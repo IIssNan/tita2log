@@ -19,6 +19,14 @@ class Article(db.Model):
   created = db.DateTimeProperty(auto_now_add=True)
   last_modified = db.DateTimeProperty(auto_now=True)
   hits = db.IntegerProperty(default=0)
+  
+  @property
+  def created_offset(self):
+    return self.created + datetime.timedelta(hours=+8)
+  
+  @property
+  def last_modified_offset(self):
+    return self.last_modified + datetime.timedelta(hours=+8)
 
 class Comment(db.Model):
   author_name = db.StringProperty(required=False, indexed=True)
