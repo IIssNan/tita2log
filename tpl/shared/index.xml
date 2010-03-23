@@ -17,9 +17,9 @@
 	{% else %}
 	<link rel="alternate" type="text/html" href="http://{{ site_domain }}/{{ article.title_url }}" />
 	{% endif %}
-	<id>tag:{{ site_domain }},{{ article.created_offset|date:"Y-m-d" }}:/{{ article.title_url }}</id>
-	<published>{{ article.created_offset|date:"Y-m-d\TH:i:s\Z" }}</published>
-	<updated>{{ article.last_modified_offset|date:"Y-m-d\TH:i:s\Z" }}</updated>
+	<id>tag:{{ site_domain }},{{ article.created|date:"Y-m-d" }}:/{{ article.title_url }}</id>
+	<published>{{ article.created|date:"Y-m-d\TH:i:s\Z" }}</published>
+	<updated>{{ article.last_modified|date:"Y-m-d\TH:i:s\Z" }}</updated>
 	<author>
 		<name>{{ site_author }}</name>
 		<uri>http://{{ site_domain }}/</uri>
