@@ -235,10 +235,12 @@ body{
   margin:20px 0 10px;
   font-size:1.4em;
 }
-.wrapper-content .pagination a{
-  display:block;
-  padding:3px 4px;
-  width:130px;
+
+/* Pagination */
+.pagination{ margin:50px 0 0 40px;}
+.pagination a, .pagination .current, .pagination .disabled{
+  padding: 4px 7px;
+  margin: 2px;
   color:#fff;
   background:#FE4365;
   -moz-border-radius:4px;
@@ -247,10 +249,13 @@ body{
   border:1px solid #fefefe;
   text-decoration:none;
 }
-.wrapper-content .pagination a:hover{
-  color:#ffffff;
-  background:#00bcba;
+.pagination a:hover, .pagination a:active{
+  background:#00bcba; color:#fff;
 }
+.pagination .current{background:#00bcba; color:#fff; border:1px solid #00bcba;}
+.pagination .disabled{color:#ddd; border:1px solid #eee; background:#f7f7f7}
+
+
 
 /** ---------- footer ----------- **/
 #footer{font-size:1.2em; position:relative;}
