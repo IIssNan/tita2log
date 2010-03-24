@@ -34,8 +34,6 @@ Demo: http://park.ivanchoi.name
   涉及的文件有：
     * v2ex/picky/__init__.py
     * tpl/writer/overview.html
-    * tpl/shared/index.xml
-    * tpl/shared/sitemap.xml
     * tpl/themes/doubleks/index.html
     * tpl/themes/doubleks/article.html
     
