@@ -6,6 +6,7 @@ import time
 import wsgiref.handlers
 
 from v2ex.picky import Datum
+from v2ex.picky.ext import ipaginator
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -13,7 +14,7 @@ from google.appengine.api import memcache
 from google.appengine.ext import db
 
 class MainHandler(webapp.RequestHandler):
-  def get(self):
+  def get(self, page=1):
     site_domain = Datum.get('site_domain')
     site_name = Datum.get('site_name')
     site_author = Datum.get('site_author')
@@ -47,13 +48,24 @@ class MainHandler(webapp.RequestHandler):
         articles = db.GqlQuery("SELECT * FROM Article WHERE is_page = FALSE ORDER BY created DESC LIMIT 12")
         memcache.add("index", articles, 86400)
       pages = db.GqlQuery("SELECT * FROM Article WHERE is_page = TRUE AND is_for_sidebar = TRUE ORDER BY title ASC")
+      
+      # Paginator by IIssNan
+      ipage = ipaginator.Paginator(5, articles, page)
+      template_values['is_paginated'] = ipage.is_paginator()
+      template_values['page_list'] = ipage.list
+      template_values['page_current'] = ipage.number
+      template_values['has_previous'] = ipage.has_previous_page()
+      template_values['has_next'] = ipage.has_next_page()
+      template_values['articles'] = ipage.entries
+      # end Paginator
+      
       template_values['page_title'] = site_name
-      template_values['articles'] = articles
       template_values['articles_total'] = articles.count()
       template_values['pages'] = pages
       template_values['pages_total'] = pages.count()
       template_values['page_archive'] = False
       site_theme = Datum.get('site_theme')
+      
       if site_theme is None:
         site_theme = 'default'
       themes = os.listdir(os.path.join(os.path.dirname(__file__), 'tpl', 'themes'))
@@ -287,6 +299,7 @@ def main():
   ('/sitemap.xml', AtomSitemapHandler),
   ('/robots.txt', RobotsHandler),
   ('/', MainHandler),
+  ('/page/(\d*)',MainHandler),
   ('/([0-9a-zA-Z\-\.]+)', ArticleHandler)
   ],
                                        debug=True)
