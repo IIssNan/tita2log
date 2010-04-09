@@ -4,7 +4,11 @@
 			  {% include 'sidebar.html' %}
 			  <div class="wrapper-content">
 				  {% if page_archive %}
-				  <div class="round tip">This is the complete archive of this blog, totally <span class="archive-count">{{ articles_total }}</span> articles.</div>
+				  <div class="round tip">COMPLETE ARCHIVE, TOTALLy <span class="archive-count">{{ articles_total }}</span> ARTICLES.</div>
+				  {% else %}
+				    {% if page_top %}
+					<div class="round tip">20 MOST VIEWED ARTICLES</div>
+					{% endif %}
 				  {% endif %}
 				  {% for article in articles %}
 				  <div class="entry">
