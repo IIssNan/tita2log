@@ -86,6 +86,9 @@
       
       // feed services
       $(".feedme a").click(function(){$(".feedways").slideToggle();return false;});
+	  
+	  // toggle-article-cotent
+	  $(".entry-title").click(function(){$(".entry-content"+$(this).attr("id")).slideToggle();return false;});
       
       // Shadowbox
       Shadowbox.init({skipSetup: true});
