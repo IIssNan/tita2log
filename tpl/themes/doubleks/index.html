@@ -24,9 +24,6 @@
 					  </span>
 					</a>
 				  {% endif %}
-				  {% if not forloop.first %}
-				  <a href="/{{ article.title_url }}" title="Show This Article" class="entry-title" id="{{ forloop.counter }}"><img src="/static/themes/doubleks/images/toggle.png" alt="Show This Article" /></a>
-				  {% endif %}
 				  </h2>
 				  {% endif %}
 				  <div class="misc png-img">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</div>

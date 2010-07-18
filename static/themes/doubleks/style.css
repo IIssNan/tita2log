@@ -109,7 +109,7 @@ body{
 	   position:absolute;
 	   top:-30px;
 	   color:#666;
-	   font:italic 11px georgia,verdana,sans-serif;
+	   font:italic 10px georgia,verdana,sans-serif;
 	   background:url("/static/themes/doubleks/images/sprite.png") no-repeat -24px -30px;
 	  }
 	.wrapper-content .title-link .wrapper-titlelink span{
@@ -143,6 +143,7 @@ body{
     -webkit-border-radius:4px;
     border-radius:4px;
   }
+  .content .wrapper-titlelink{font-size:11px;}
   .content a.img_link:hover{background:none;}
   .content h3, .content h4, .content h5, .content h6{margin:5px 0; /*color:#47b0a9;*/}
   .content h3{font-size:17px;}
