@@ -460,6 +460,14 @@ class AtomSitemapHandler(webapp.RequestHandler):
     self.response.headers['Content-type'] = 'text/xml; charset=UTF-8'
     self.response.out.write(output)
     
+class HitFeedHandler(webapp.RequestHandler):
+  def get(self, key = ''):
+    if (key):
+      article = db.get(db.Key(key))
+      if article:
+        article.hits_feed = article.hits_feed + 1
+        article.put()
+    
 class RobotsHandler(webapp.RequestHandler):
   def get(self):
     template_values = {
@@ -480,6 +488,7 @@ def main():
   ('/robots.txt', RobotsHandler),
   ('/', MainHandler),
   ('/page/(\d*)',MainHandler),
+  ('/hit/([0-9a-zA-Z\-\_]+)', HitFeedHandler),
   ('/([0-9a-zA-Z\-\.]+)', ArticleHandler)
   ],
                                        debug=True)

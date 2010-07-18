@@ -17,7 +17,10 @@
 			    {% endif %}
           </h2>
           {% endif %}
-				  <div class="misc png-img">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</div>
+				  <div class="misc png-img">
+				    {{ article.created|timezone:8|date:"Y-m-d H:i:s" }}
+            <small>{{ article.hits }}+{{ article.hits_feed }} views</small>
+          </div>
 				  {% if forloop.last %}
 				  <div class="content tail">
 				  {% else %}

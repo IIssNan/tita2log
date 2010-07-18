@@ -20,6 +20,7 @@ class Article(db.Model):
   created = db.DateTimeProperty(auto_now_add=True)
   last_modified = db.DateTimeProperty(auto_now=True)
   hits = db.IntegerProperty(default=0)
+  hits_feed = db.IntegerProperty(default=0)
   
   @property
   def created_offset(self):
