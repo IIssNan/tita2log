@@ -271,80 +271,80 @@ class ArticleHandler(webapp.RequestHandler):
     site_updated = Datum.get('site_updated')
     if site_updated is None:
       site_updated = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-      feed_url = Datum.get('feed_url')
-      if feed_url is None:
+    feed_url = Datum.get('feed_url')
+    if feed_url is None:
+      feed_url = '/index.xml'
+    else:
+      if len(feed_url) == 0:
         feed_url = '/index.xml'
-      else:
-        if len(feed_url) == 0:
-          feed_url = '/index.xml'
       
-      template_values = {
-                         'site_domain' : site_domain,
-                         'site_name' : site_name,
-                         'site_author' : site_author,
-                         'site_slogan' : site_slogan,
-                         'feed_url' : feed_url
-                         }
-      if site_analytics is not None:
-        template_values['site_analytics'] = site_analytics
+    template_values = {
+                        'site_domain' : site_domain,
+                        'site_name' : site_name,
+                        'site_author' : site_author,
+                        'site_slogan' : site_slogan,
+                        'feed_url' : feed_url
+                        }
+    if site_analytics is not None:
+      template_values['site_analytics'] = site_analytics
       
-      pages = db.GqlQuery("SELECT * FROM Article WHERE is_page = TRUE AND is_for_sidebar = TRUE ORDER BY title ASC")
-      article = db.GqlQuery("SELECT * FROM Article WHERE title_url = :1 LIMIT 1", url)
-      if (article.count() == 1):
-        article_found = True
-        article = article[0]
-        article.hits = article.hits + 1
-        try:
-          article.put()
-        except:
-          article.hits = article.hits - 1
-      else:
-        article_found = False
-      if (article_found):
-        if (article.article_set != None):
-          if (len(article.article_set) > 0):
-            try:
-              q = db.GqlQuery("SELECT * FROM Article WHERE article_set = :1 AND __key__ != :2 ORDER BY __key__ DESC LIMIT 10", article.article_set, article.key())
-              if q.count() > 0:
-                template_values['related'] = q
-              else:
-                template_values['related'] = False
-            except:
+    pages = db.GqlQuery("SELECT * FROM Article WHERE is_page = TRUE AND is_for_sidebar = TRUE ORDER BY title ASC")
+    article = db.GqlQuery("SELECT * FROM Article WHERE title_url = :1 LIMIT 1", url)
+    if (article.count() == 1):
+      article_found = True
+      article = article[0]
+      article.hits = article.hits + 1
+      try:
+        article.put()
+      except:
+        article.hits = article.hits - 1
+    else:
+      article_found = False
+    if (article_found):
+      if (article.article_set != None):
+        if (len(article.article_set) > 0):
+          try:
+            q = db.GqlQuery("SELECT * FROM Article WHERE article_set = :1 AND __key__ != :2 ORDER BY __key__ DESC LIMIT 10", article.article_set, article.key())
+            if q.count() > 0:
+              template_values['related'] = q
+            else:
               template_values['related'] = False
-          else:
+          except:
             template_values['related'] = False
         else:
-          template_values['related'] = False  
-        parent = None
-        if article.parent is not '':
-          q = db.GqlQuery("SELECT * FROM Article WHERE title_url = :1 LIMIT 1", article.parent_url)
-          if q.count() == 1:
-            parent = q[0]
-        template_values['parent'] = parent
-        template_values['page_title'] = article.title
-        template_values['article'] = article
-        template_values['pages'] = pages
-        template_values['pages_total'] = pages.count()
-        site_theme = Datum.get('site_theme')
-        if site_theme is None:
-          site_theme = 'default'
-        themes = os.listdir(os.path.join(os.path.dirname(__file__), 'tpl', 'themes'))
-        if site_theme not in themes:
-          site_theme = 'default'
-        path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, 'article.html')
-        self.response.out.write(template.render(path, template_values))
+          template_values['related'] = False
       else:
-        template_values['page_title'] = 'Project Picky › Article Not Found'
-        template_values['pages'] = pages
-        template_values['pages_total'] = pages.count()
-        site_theme = Datum.get('site_theme')
-        if site_theme is None:
-          site_theme = 'default'
-        themes = os.listdir(os.path.join(os.path.dirname(__file__), 'tpl', 'themes'))
-        if site_theme not in themes:
-          site_theme = 'default'
-        path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, '404.html')
-        self.response.out.write(template.render(path, template_values))
+        template_values['related'] = False  
+      parent = None
+      if article.parent is not '':
+        q = db.GqlQuery("SELECT * FROM Article WHERE title_url = :1 LIMIT 1", article.parent_url)
+        if q.count() == 1:
+          parent = q[0]
+      template_values['parent'] = parent
+      template_values['page_title'] = article.title
+      template_values['article'] = article
+      template_values['pages'] = pages
+      template_values['pages_total'] = pages.count()
+      site_theme = Datum.get('site_theme')
+      if site_theme is None:
+        site_theme = 'default'
+      themes = os.listdir(os.path.join(os.path.dirname(__file__), 'tpl', 'themes'))
+      if site_theme not in themes:
+        site_theme = 'default'
+      path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, 'article.html')
+      self.response.out.write(template.render(path, template_values))
+    else:
+      template_values['page_title'] = 'Project Picky › Article Not Found'
+      template_values['pages'] = pages
+      template_values['pages_total'] = pages.count()
+      site_theme = Datum.get('site_theme')
+      if site_theme is None:
+        site_theme = 'default'
+      themes = os.listdir(os.path.join(os.path.dirname(__file__), 'tpl', 'themes'))
+      if site_theme not in themes:
+        site_theme = 'default'
+      path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, '404.html')
+      self.response.out.write(template.render(path, template_values))
 
 
 class AtomFeedHandler(webapp.RequestHandler):
