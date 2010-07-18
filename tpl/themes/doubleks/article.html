@@ -33,6 +33,15 @@
 					  {% endifequal %}
 				  {% endifequal %}
 				  </div>
+          {% if related %}
+          <div class="related">RELATED ARTICLES</div>
+          {% for related_article in related %}
+          <div class="sep10"></div>
+          ›&nbsp;<a href="/{{ related_article.title_url }}">{{ related_article.title }}</a>
+          {% endfor %}
+          <div class="sep10"></div>
+          {% else %}
+          {% endif %}
 				  </div><!--entry-->
 				</div>
 			</div>
