@@ -4,8 +4,15 @@
 			  {# include 'sidebar.html' #}
 			  <div class="wrapper-content">
 			    <div class="entry entry-single">
-				  {% if article.title %}
-          <h2>{{ article.title }}&nbsp;
+			      <div class="back-to-main"><a href="/">&laquo; Back to Index Page</a></div>
+				  
+            <h2>
+            {% if article.title %}
+            {{ article.title }}
+            {% else %}
+            Untitled
+            {% endif %}
+            &nbsp;
           {% if article.title_link%}
           <a href="{{ article.title_link }}" target="_blank" class="title-link">
           <img src="/static/themes/doubleks/images/title_link.png" alt="Title Link" class="permaicon" />
@@ -16,7 +23,6 @@
           </a>
 			    {% endif %}
           </h2>
-          {% endif %}
 				  <div class="misc png-img misc-single">
 				    {{ article.created|timezone:8|date:"Y-m-d H:i:s" }}
             <small>{{ article.hits }}+{{ article.hits_feed }} views</small>

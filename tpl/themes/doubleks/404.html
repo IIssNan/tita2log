@@ -1,14 +1,17 @@
 {% include 'header.html' %}
     <div id="main">
 			<div class="wrapper-main">
-			  {% include 'sidebar.html' %}
+			  {# include 'sidebar.html' #}
         <div class="wrapper-content">
-          <div class="title-404">
-            <span class="o404">404</span>
-            &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Page Not Found
-          </div>
-          <div class="content-404-main">
-            <span class="content-404">The content you're looking for doesn't exisit.</span>
+          <div class="wrapper-404">
+            <div class="title-404">
+              <span class="o404">404</span>
+              &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Page not Found
+            </div>
+            <div class="content-404-main">
+              <span class="content-404">The content you're looking for doesn't exisit</span>
+              <p>Back to the <a href="/">Homepage</a></p>
+            </div>
           </div>
         </div>
 			</div>

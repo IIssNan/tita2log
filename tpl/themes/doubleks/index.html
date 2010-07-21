@@ -12,9 +12,13 @@
 				  {% endif %}
 				  {% for article in articles %}
 				  <div class="entry">
-				  {% if article.title %}
 				  <h2>
-				  <a href="/{{ article.title_url }}" title="Permalink to {{ article.title|escape }}">{{ article.title }}</a>&nbsp;
+				  {% if article.title %}
+				  <a href="/{{ article.title_url }}" title="{{ article.title|escape }}">{{ article.title }}</a>
+          {% else %}
+          <a href="/{{ article.title_url }}" title="Untitled Article">Untitled</a>
+          {% endif %}
+          &nbsp;
 				  {% if article.title_link%}
 					<a href="{{ article.title_link }}" target="_blank" class="title-link">
 					  <img src="/static/themes/doubleks/images/title_link.png" alt="Title Link" class="permaicon" />
@@ -25,7 +29,6 @@
 					</a>
 				  {% endif %}
 				  </h2>
-				  {% endif %}
 				  <div class="misc png-img">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</div>
 				  {% if forloop.first %}
 				  <div class="content content-index first">

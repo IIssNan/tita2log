@@ -334,7 +334,8 @@ class ArticleHandler(webapp.RequestHandler):
       path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, 'article.html')
       self.response.out.write(template.render(path, template_values))
     else:
-      template_values['page_title'] = 'Project Picky › Article Not Found'
+      # 文章未找到
+      template_values['page_title'] = 'Caizpark › Article Not Found'
       template_values['pages'] = pages
       template_values['pages_total'] = pages.count()
       site_theme = Datum.get('site_theme')
