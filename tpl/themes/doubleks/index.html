@@ -28,9 +28,9 @@
 				  {% endif %}
 				  <div class="misc png-img">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</div>
 				  {% if forloop.first %}
-				  <div class="content first">
+				  <div class="content content-index first">
 				  {% else %}
-				  <div class="content entry-content{{ forloop.counter }}">
+				  <div class="content content-index entry-content{{ forloop.counter }}">
 				  {% endif %}
 				  {% ifequal article.format 'markdown' %}
 					  {{ article.content_formatted }}
