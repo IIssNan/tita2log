@@ -243,11 +243,19 @@ body{
 .wrapper-sidebar{
   float:right;
   margin:50px 0;
-  width:160px;
+  width:263px;
 }
 .wrapper-sidebar h2{color:#b2cdc1;font:italic bold 24px Georgia;}
-.wrapper-sidebar ul{margin:0 20px; font-size:1.1em}
-.wrapper-sidebar li{
+.wrapper-sidebar ul{margin:0 0 0 20px; font-size:1.1em}
+
+
+.sidebar_h2_as{text-indent:-9999px; background:url(/static/themes/doubleks/images/sidebar_as.png) no-repeat 0 50%}
+.sidebar_as{margin:0; overflow:hidden; width:240px;}
+.sidebar_as li{float:left; margin-right:5px; margin-bottom:1px;}
+.as_odd{clear:left;}
+
+.sidebar_h2_nav{clear:both; text-indent:-9999px; background:url(/static/themes/doubleks/images/sidebar_nav.png) no-repeat 0 50%}
+#side-nav li{
   padding-left:15px;
   background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -80px;
 }
@@ -356,19 +364,24 @@ body{
 .section .delicious,
 .section .flickr,
 .section .yupoo,
-.section .lastfm{
+.section .lastfm,
+.section .deviantart,
+.section .gamespot{
   background:url("/static/themes/doubleks/images/sprite.png") no-repeat;
   /*line-height:30px;*/
-  padding:3px 3px 3px 40px;
-  margin:5px 0;
+  padding:6px 3px 3px 35px;
+  margin:1px 5px 0 1px;
   height:32px;
 }
 .social .title{font-weight:bold; color:#83af9b;}
+.social li{display:inline; float:left; width:220px;}
 .section .twitter{background-position:0 -100px;}
 .section .delicious{background-position:0 -142px;}
 .section .yupoo{background-position:0 -183px;}
 .section .lastfm{background-position:0 -225px;}
-/*.section .flickr{background-position:0 -153px;}*/
+.section .flickr{background-position:0 -572px;}
+.section .deviantart{background-position:0 -613px;}
+.section .gamespot{background-position:0 -528px;}
 
 .cr{
   padding:15px;

@@ -5,6 +5,7 @@ import os
 import time
 import datetime
 import hashlib
+import urllib
 import wsgiref.handlers
 
 from v2ex.picky import Datum
@@ -347,6 +348,70 @@ class ArticleHandler(webapp.RequestHandler):
       path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, '404.html')
       self.response.out.write(template.render(path, template_values))
 
+class iArticleSetHandler(webapp.RequestHandler):
+  def header(self, url):
+    pass
+  
+  def get(self, set):
+    # 将获取的set进行unquote并转换为uncode编码
+    set_encode = urllib.unquote(set).decode('utf-8')
+    
+    site_domain = Datum.get('site_domain')
+    site_name = Datum.get('site_name')
+    site_author = Datum.get('site_author')
+    site_slogan = Datum.get('site_slogan')
+    site_analytics = Datum.get('site_analytics')
+    site_updated = Datum.get('site_updated')
+    if site_updated is None:
+      site_updated = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    feed_url = Datum.get('feed_url')
+    if feed_url is None:
+      feed_url = '/index.xml'
+    else:
+      if len(feed_url) == 0:
+        feed_url = '/index.xml'
+    
+    template_values = {
+                       'site_domain' : site_domain,
+                       'site_name' : site_name,
+                       'site_author' : site_author,
+                       'site_slogan' : site_slogan,
+                       'feed_url' : feed_url
+                       }
+    
+    if site_analytics is not None:
+      template_values['site_analytics'] = site_analytics
+    
+    output = None
+    #output = memcache.get('ias_output')
+    if output is None:
+      articles = None
+      #articles = memcache.get('ias')
+      if articles is None:
+        articles = db.GqlQuery("SELECT * FROM Article WHERE article_set = :1 ORDER BY created DESC LIMIT 100", set_encode)
+        memcache.add("ias", articles, 7200)
+      pages = db.GqlQuery("SELECT * FROM Article WHERE is_page = TRUE AND is_for_sidebar = TRUE ORDER BY title ASC")
+      if site_name is not None:
+        template_values['page_title'] = site_name + u' › Article Set | ' +  set_encode
+      else:
+        template_values['page_title'] = u'Project Picky › Article Set  | ' + set_encode
+        
+      template_values['articles'] = articles
+      template_values['article_total'] = articles.count()
+      template_values['pages'] = pages
+      template_values['pages_total'] = pages.count()
+      template_values['page_as'] = True
+      
+      site_theme = Datum.get('site_theme')
+      if site_theme is None:
+        site_theme = 'default'
+      themes = os.listdir( os.path.join( os.path.dirname(__file__), 'tpl', 'themes'))
+      if site_theme not in themes:
+        site_theme = 'default'
+      path = os.path.join(os.path.dirname(__file__), 'tpl', 'themes', site_theme, 'index.html')
+      output = template.render(path, template_values)
+      memcache.add('ias_output', output, 7200)
+    self.response.out.write(output)
 
 class AtomFeedHandler(webapp.RequestHandler):
   def get(self):
@@ -483,6 +548,7 @@ def main():
   ('/archive', ArchiveHandler),
   ('/top', TopHandler),
   ('/tweets', TweetsHandler),
+  ('/articleset/([0-9a-zA-Z\-\.\%]+)', iArticleSetHandler),
   ('/index.xml', AtomFeedHandler),
   ('/set.xml', SetAtomFeedHandler),
   ('/sitemap.xml', AtomSitemapHandler),
