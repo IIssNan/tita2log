@@ -254,6 +254,7 @@ body{
 .sidebar_as{margin:0; overflow:hidden; width:263px;}
 .sidebar_as li{float:left; margin-right:10px; margin-bottom:10px;}
 .as_odd{clear:left;}
+.sidebar_h2_sponsors{text-indent:-9999px; background:url(/static/themes/doubleks/images/sidebar_h2_sponsors.png) no-repeat 0 50%}
 
 .sidebar_h2_page{clear:both; text-indent:-9999px; background:url(/static/themes/doubleks/images/sidebar_h2_page.png) no-repeat 0 50%}
 #side-nav li{
