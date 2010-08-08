@@ -301,6 +301,28 @@ class ArticleHandler(webapp.RequestHandler):
         article.hits = article.hits - 1
     else:
       article_found = False
+    # 获取邻居文章
+    if (article_found):
+      # 获取上一篇文章
+      try:
+        q_prev = db.GqlQuery("SELECT * FROM Article WHERE __key__ < :1 AND is_page = false ORDER BY __key__ DESC LIMIT 1", article.key() )
+        if q_prev.count() > 0:
+          template_values['entry_prev'] = q_prev[0]
+        else:
+          template_values['entry_prev'] = False
+      except:
+        template_values['entry_prev'] = False
+      # 获取下一篇文章
+      try:
+        q_next = db.GqlQuery("SELECT * FROM Article WHERE __key__ > :1 AND is_page = false ORDER BY __key__ DESC LIMIT 1", article.key() )
+        if q_next.count() > 0:
+          template_values['entry_next'] = q_next[0]
+        else:
+          template_values['entry_next'] = False
+      except:
+        template_values['entry_next'] = False
+    
+    # 获取Article Set
     if (article_found):
       if (article.article_set != None):
         if (len(article.article_set) > 0):

@@ -3,14 +3,27 @@
 			<div class="wrapper-main">
 			  {# include 'sidebar.html' #}
 			  <div class="wrapper-content">
+			    <div class="nav-n-social">
+			      <div class="clearfix article-nav">
+			        <div class="back-to-main"><a href="/">Back to Index Page</a></div>
+              {% if not article.is_page %}
+              <ul class="entry-neighber">
+                {% if entry_prev %}
+                <li class="entry-pre"><a href="{{ entry_prev.title_url }}">{{ entry_prev.title }}</a></li>
+                {% else %}
+                <li class="entry-pre entry-neighber-none">none</li>
+                {% endif %}
+                {% if entry_next %}
+                <li class="entry-next"><a href="{{ entry_next.title_url }}">{{ entry_next.title }}</a></li>
+                {% else %}
+                <li class="entry-next entry-neighber-none">none</li>
+                {% endif %}
+              </ul>
+              {% endif %}
+			      </div>
+            <div class="be-social"><!--social--></div>
+			    </div>
 			    <div class="entry entry-single">
-			      <div class="back-to-main"><a href="/">Back to Index Page</a></div>
-            <!--
-				    <ul class="entry-nav">
-				      <li><a class="entry-pre" href="#">previous</a></li>
-              <li><a class="entry-next" href="#">next</a></li>
-				    </ul>
-            -->
             <h2>
             {% if article.title %}
             {{ article.title }}

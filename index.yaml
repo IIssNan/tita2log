@@ -12,6 +12,11 @@ indexes:
 
 - kind: Article
   properties:
+  - name: __key__
+    direction: desc
+
+- kind: Article
+  properties:
   - name: article_set
   - name: __key__
     direction: desc
@@ -27,6 +32,12 @@ indexes:
   - name: is_for_sidebar
   - name: is_page
   - name: title
+
+- kind: Article
+  properties:
+  - name: is_page
+  - name: __key__
+    direction: desc
 
 - kind: Article
   properties:
