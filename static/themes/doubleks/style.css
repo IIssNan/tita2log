@@ -91,7 +91,7 @@ body{
      font-size:1.1em; 
      color:#999;
      padding-left: 18px;
-     background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -62px;
+     background:url("/static/themes/doubleks/images/sprite.png") no-repeat 0 -63px;
    }
    .wrapper-content .title-link{
      position:relative; z-index:15; text-decoration:none;
@@ -215,14 +215,20 @@ body{
   .content-index .movie-wrapper embed{width:600px !important; height:200px !important;}
   .content embed{border:1px solid #eee;}
 
-.related{margin-top:20px; font-size:1.2em;}
-.related h3{margin-bottom:5px; color:#47b0a9; font-weight:bold;}
-.related ul{margin:3px 10px;}
-  .related li{margin:3px 1px;}
-  .related a{color:#fe4365;}
+.related{position:absolute; top:40px; right:0; margin-top:20px; width:230px; font-size:1.2em;}
+.related h3{margin-bottom:5px; color:#47b0a9; text-indent:-9999px; background:url(/static/themes/doubleks/images/related_title.png) no-repeat 0 50% }
+.related ul{margin:3px 9px;}
+  .related li{
+    margin:5px 1px;
+    padding:0 0 0 18px;
+    background:url("/static/themes/doubleks/images/related_item_alt.png") no-repeat scroll 0 1px transparent;
+  }
+  .related a{color:#fe4365; text-decoration:none;}
+  .related a:hover{text-decoration:underline;}
   
 /* Single Page */
-.entry-single h2{  padding-bottom:5px; border-bottom:1px solid #47b0a9; }
+.entry-single{margin-top:50px; position:relative;}
+.entry-single h2{ padding-bottom:5px; border-bottom:1px solid #47b0a9; }
 .content-single{}
 .misc-single{}
 .back-to-main{float:left; margin-top:-40px;}
@@ -234,12 +240,19 @@ body{
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   border-radius:3px; 
+  font-size:1.1em;
 }
 .back-to-main a:hover{
-  padding:1px 2px;
+  padding-top:0;
   background:#fe4365;
   color:#fff; 
 }
+
+.entry-nav{float:right;  margin-top:-55px; display:inline; margin-right:40px; }
+  .entry-nav li{margin:6px 0;}
+  .entry-pre, .entry-next{font-size:1.2em; padding-left:18px;}
+  .entry-pre{background:url(/static/themes/doubleks/images/entry_previous.png) no-repeat 0 0;}
+  .entry-next{background:url(/static/themes/doubleks/images/entry_next.png) no-repeat 0 0;}
   
 .wrapper-sidebar{
   float:right;
