@@ -3,8 +3,24 @@
 			<div class="wrapper-main">
 			  {# include 'sidebar.html' #}
 			  <div class="wrapper-content">
-			    <div class="nav-n-social">
-			      <div class="clearfix article-nav">
+			    <div class="nav-n-social clearfix">
+			      <ul class="be-social clearfix">
+			        <li><a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">
+			          <img src="/static/themes/doubleks/images/so_delicious.png" alt=""/></a></li>
+              <li><a href="http://twitter.com/home?status=http://{{ site_domain }}/{{ article.title_url|escape }} {{ article.title|escape }}" title="Twitter This" target="_blank" rel="nofollow">
+                <img src="/static/themes/doubleks/images/so_twitter.png" alt=""/></a></li>
+              <li><a href="javascript:var u='http://www.douban.com/recommend/?url='+document.location.href+'&title='+encodeURIComponent(document.title);window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" title="推荐到豆瓣""> 
+                <img src="/static/themes/doubleks/images/so_dou9.png" alt=""/></a></li>
+              <li><a href="http://www.kaixin001.com/repaste/share.php?rtitle={{ article.title|escape }}&rurl=http://{{ site_domain }}/{{ article.title_url|escape }}&rcontent={{ article.content|striptags }}" title="转贴到开心网" target="_blank" rel="nofollow">
+                <img src="/static/themes/doubleks/images/so_kaixin.png" alt=""/></a></li>
+              <li><a href="http://share.renren.com/share/buttonshare.do?link=http://{{ site_domain }}/{{ article.title_url|escape }}&title={{ article.title|escape }}" target="_blank" rel="nofollow">
+                <img src="/static/themes/doubleks/images/so_renren.png" alt=""/></a></li>
+              <li><a href="http://v.t.sina.com.cn/share/share.php?title={{ article.title|escape }}&url=http://{{ site_domain }}/{{ article.title_url|escape }}">
+                <img src="/static/themes/doubleks/images/so_xinlang.png" alt=""/></a></li>
+              <li><a href="javascript:void( window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(document.location.href)))">
+                <img src="/static/themes/doubleks/images/so_qzone.png" alt=""/></a></li>
+			      </ul>
+			      <div class="article-nav clearfix">
 			        <div class="back-to-main"><a href="/">Back to Index Page</a></div>
               {% if not article.is_page %}
               <ul class="entry-neighber">
@@ -21,7 +37,6 @@
               </ul>
               {% endif %}
 			      </div>
-            <div class="be-social"><!--social--></div>
 			    </div>
 			    <div class="entry entry-single">
             <h2>
@@ -70,15 +85,17 @@
           <!-- DisQus START-->
           <div id="disqus_thread"></div>
 <script type="text/javascript">
-   //var disqus_developer = 1;
+  
+   var disqus_developer = 1;
   /**
     * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
     */
-  /*(function() {
+   
+  (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
    dsq.src = 'http://caizpark.disqus.com/embed.js';
    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();*/
+  })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=caizpark">comments powered by Disqus.</a></noscript>
 <!--<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>-->
