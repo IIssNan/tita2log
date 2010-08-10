@@ -189,7 +189,7 @@ body{
   .content ul li{list-style:square inside;}
   .content ol li{list-style:decimal inside;}
   .content img{
-     margin:10px 28px; 
+     margin:10px 15px; 
      /*padding:3px; 
      border:1px solid #dde7d7;
      -moz-border-radius:4px;
