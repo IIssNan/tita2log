@@ -1,14 +1,7 @@
 <div id="sidebar">
 	<div class="wrapper-sidebar">
 	  <h2 class="sidebar_h2_as">Article Set</h2>
-    <ul class="sidebar_as">
-      <li><a href="/articleset/game"><img src="/static/themes/doubleks/images/as_game.png" alt="Article Set : Game" /></a></li>
-      <li><a href="/articleset/ios"><img src="/static/themes/doubleks/images/as_ios.png" alt="Article Set : iOS" /></a></li>
-      <li class="as_odd"><a href="/articleset/video"><img src="/static/themes/doubleks/images/as_video.png" alt="Article Set : video" /></a></li>
-      <li><a href="/articleset/customize"><img src="/static/themes/doubleks/images/as_customize.png" alt="Article Set : Customize" /></a></li>
-      <li class="os_odd"><a href="/articleset/iapp"><img src="/static/themes/doubleks/images/as_iapp.png" alt="Article Set : iApp" /></a></li>
-      <li><a href="/articleset/book"><img src="/static/themes/doubleks/images/as_books.png" alt="Article Set : Book" /></a></li>
-    </ul>
+    {% include 'inc_sidebar_as.html' %}
 	  <h2 class="sidebar_h2_page">Page</h2>
 		<ul id="side-nav">
 			{% for page in pages %}
@@ -18,9 +11,13 @@
 			<li class="png-img"><a href="/archive">ARCHIVE</a></li>
       <!--<li class="png-img"><a href="/tweets">TWEETS</a></li>-->
 		</ul>
-    <h2 class="sidebar_h2_sponsors">sponsors</h2>
+    <h2 class="sidebar_h2_sponsors">Sponsors</h2>
 		<ul class="sponsors">
-		  <li><a href="#" title="Your ads here"><img src="/static/themes/doubleks/images/sponsor_248x70.png" alt="Your ads here" /></a></li>
+		  <li>
+		    <a href="#" title="Your ads here">
+		      <img src="http://cdn.ivanchoi.name/caizpark/static/images/sponsor_248x70.png" alt="Your ads here" />
+        </a>
+      </li>
 		</ul>
 	</div>
 </div>

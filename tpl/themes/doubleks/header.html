@@ -6,7 +6,7 @@
   <meta name="description" content="ivanChoi's personal blog, focus on games, books and lifestyle" />
   
   <title>{% if page_title %}{{ page_title }}{% else %}{{ site_name }}{% endif %}</title>
-  <link rel="stylesheet" type="text/css" media="screen"  href="/static/themes/doubleks/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen"  href="http://cdn.ivanchoi.name/caizpark/static/styles/style.cdn.css" />
   <link rel="alternate" type="application/atom+xml" href="{{ feed_url }}" />
   <link rel="shortcut icon" href="/favicon.ico" />
   
@@ -28,38 +28,7 @@
 			  <p class="slogan">{{ site_slogan}}</p>
 			  <div>
 		      <div class="feedme"><a href="{{ feed_url }}" class="png-img">RssFeed</a></div>
-		      <ul class="feedways">
-		        <li>
-              <a href="http://fusion.google.com/add?feedurl={{ feed_url }}">
-              <img src="/static/themes/doubleks/images/feed_google.gif" alt="google reader" />
-              </a>
-            </li>
-		        <li>
-              <a href="http://mail.qq.com/cgi-bin/feed?u={{ feed_url }}">
-              <img src="/static/themes/doubleks/images/feed_qq.gif" alt="QQ Reader" />
-              </a>
-            </li>
-		        <li>
-              <a href="http://www.xianguo.com/subscribe.php?url={{ feed_url }}">
-              <img src="/static/themes/doubleks/images/feed_xianguo.gif" alt="XianGuo Reader" />
-              </a>
-            </li>
-		        <li>
-              <a href="http://reader.youdao.com/b.do?url={{ feed_url }}">
-              <img src="/static/themes/doubleks/images/feed_youdao.gif" alt="YouDao Reader" />
-              </a>
-            </li>
-		        <li>
-              <a href="http://9.douban.com/reader/subscribe?url={{ feed_url }}">
-              <img src="/static/themes/doubleks/images/feed_douban9.gif" alt="DouBan 9" />
-              </a>
-            </li>
-		        <li>
-              <a href="http://www.zhuaxia.com/add_channel.php?url={{ feed_url }}">
-              <img src="/static/themes/doubleks/images/feed_zhuaxia.gif" alt="ZhuaXia" />
-              </a>
-            </li>
-		      </ul>
+		      {% include 'inc_feedway.html' %}
 		    </div>
 		  </div>
 		</div><!--#header-->
