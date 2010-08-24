@@ -1,4 +1,4 @@
-﻿{% include 'header.html' %}
+{% include 'header.html' %}
 		<div id="main">
 			<div class="wrapper-main clearfix">
 			  {% include 'sidebar.html' %}
@@ -31,13 +31,13 @@
           <a href="/{{ article.title_url }}#disqus_thread" class="disqus_comment_count">x</a>
 				  </h2>
 				  <div class="misc png-img clearfix">
-				    <span class="misc-article-time">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</span>
+				    <span class="misc-article-time png-img">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</span>
             <ul class="be-social-index clearfix">
               <li><a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">
                 <img src="/static/themes/doubleks/images/so_delicious_small.png" alt="save it to delicious"/></a></li>
               <li><a href="http://twitter.com/home?status=http://{{ site_domain }}/{{ article.title_url|escape }} {{ article.title|escape }}" title="Twitter This" target="_blank" rel="nofollow">
                 <img src="/static/themes/doubleks/images/so_twitter_small.png" alt=""/></a></li>
-              <li><a href="javascript:var u='http://www.douban.com/recommend/?url='+document.location.href+'&title='+encodeURIComponent(document.title);window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" title="推荐到豆瓣""> 
+              <li><a href="javascript:var u='http://www.douban.com/recommend/?url='+document.location.href+'&title='+encodeURIComponent(document.title);window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" title="推荐到豆瓣"> 
                 <img src="/static/themes/doubleks/images/so_dou9_small.png" alt=""/></a></li>
               <li><a href="http://www.kaixin001.com/repaste/share.php?rtitle={{ article.title|escape }}&rurl=http://{{ site_domain }}/{{ article.title_url|escape }}&rcontent={{ article.content|striptags }}" title="转贴到开心网" target="_blank" rel="nofollow">
                 <img src="/static/themes/doubleks/images/so_kaixin_small.png" alt=""/></a></li>
