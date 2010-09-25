@@ -31,6 +31,9 @@
 	{% endif %}
 	<br />
 	<textarea class="ml" name="content">{% if article.content %}{{ article.content|escape }}{% endif %}</textarea>
+	<script type="text/javascript">
+	  CKEDITOR.replace( 'content' );
+	</script>
 	<br /><br />
   Set<br />
   <input type="text" class="sl" name="article_set" value="{% if article.article_set %}{{ article.article_set|escape }}{% endif %}" />

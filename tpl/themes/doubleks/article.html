@@ -5,34 +5,27 @@
 			  <div class="wrapper-content">
 			    <div class="nav-n-social clearfix">
 			      <ul class="be-social clearfix">
-			        <li><a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">
-			          <img src="/static/themes/doubleks/images/so_delicious.png" alt=""/></a></li>
-              <li><a href="http://twitter.com/home?status=http://{{ site_domain }}/{{ article.title_url|escape }} {{ article.title|escape }}" title="Twitter This" target="_blank" rel="nofollow">
-                <img src="/static/themes/doubleks/images/so_twitter.png" alt=""/></a></li>
-              <li><a href="javascript:var u='http://www.douban.com/recommend/?url='+document.location.href+'&title='+encodeURIComponent(document.title);window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" title="推荐到豆瓣""> 
-                <img src="/static/themes/doubleks/images/so_dou9.png" alt=""/></a></li>
-              <li><a href="http://www.kaixin001.com/repaste/share.php?rtitle={{ article.title|escape }}&rurl=http://{{ site_domain }}/{{ article.title_url|escape }}&rcontent={{ article.content|striptags }}" title="转贴到开心网" target="_blank" rel="nofollow">
-                <img src="/static/themes/doubleks/images/so_kaixin.png" alt=""/></a></li>
-              <li><a href="http://share.renren.com/share/buttonshare.do?link=http://{{ site_domain }}/{{ article.title_url|escape }}&title={{ article.title|escape }}" target="_blank" rel="nofollow">
-                <img src="/static/themes/doubleks/images/so_renren.png" alt=""/></a></li>
-              <li><a href="http://v.t.sina.com.cn/share/share.php?title={{ article.title|escape }}&url=http://{{ site_domain }}/{{ article.title_url|escape }}">
-                <img src="/static/themes/doubleks/images/so_xinlang.png" alt=""/></a></li>
-              <li><a href="javascript:void( window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(document.location.href)))">
-                <img src="/static/themes/doubleks/images/so_qzone.png" alt=""/></a></li>
+			        <li><a class="delicious png-img" href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">保存至Delicious</a></li>
+              <li><a class="twitter png-img" href="http://twitter.com/home?status=http://{{ site_domain }}/{{ article.title_url|escape }} {{ article.title|escape }}" title="Twitter This" target="_blank" rel="nofollow">Twitter this</a></li>
+              <li><a class="douban png-img" href="javascript:var u='http://www.douban.com/recommend/?url='+document.location.href+'&title='+encodeURIComponent(document.title);window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" title="推荐到豆瓣">推荐到豆瓣</a></li>
+              <li><a class="kaixin png-img" href="http://www.kaixin001.com/repaste/share.php?rtitle={{ article.title|escape }}&rurl=http://{{ site_domain }}/{{ article.title_url|escape }}&rcontent={{ article.content|striptags }}" title="转贴到开心网" target="_blank" rel="nofollow">转贴到开心网</a></li>
+              <li><a class="renren png-img" href="http://share.renren.com/share/buttonshare.do?link=http://{{ site_domain }}/{{ article.title_url|escape }}&title={{ article.title|escape }}" target="_blank" rel="nofollow">转帖至人人网</a></li>
+              <li><a class="xinlang png-img" href="http://v.t.sina.com.cn/share/share.php?title={{ article.title|escape }}&url=http://{{ site_domain }}/{{ article.title_url|escape }}">转播到新浪微博</a></li>
+              <li><a class="qzone png-img" href="javascript:void( window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(document.location.href)))">分享到QQ空间</a></li>
 			      </ul>
 			      <div class="article-nav clearfix">
-			        <div class="back-to-main"><a href="/">Back to Index Page</a></div>
+			        <div class="back-to-main"><a href="/" class="png-img">Back to Index Page</a></div>
               {% if not article.is_page %}
               <ul class="entry-neighber">
                 {% if entry_prev %}
-                <li class="entry-pre"><a href="{{ entry_prev.title_url }}">{{ entry_prev.title }}</a></li>
+                <li class="entry-pre png-img"><a href="{{ entry_prev.title_url }}">{{ entry_prev.title }}</a></li>
                 {% else %}
-                <li class="entry-pre entry-neighber-none">none</li>
+                <li class="entry-pre entry-neighber-none png-img">none</li>
                 {% endif %}
                 {% if entry_next %}
-                <li class="entry-next"><a href="{{ entry_next.title_url }}">{{ entry_next.title }}</a></li>
+                <li class="entry-next png-img"><a href="{{ entry_next.title_url }}">{{ entry_next.title }}</a></li>
                 {% else %}
-                <li class="entry-next entry-neighber-none">none</li>
+                <li class="entry-next entry-neighber-none png-img">none</li>
                 {% endif %}
               </ul>
               {% endif %}
