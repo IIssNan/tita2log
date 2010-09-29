@@ -33,7 +33,7 @@
 				  <div class="misc png-img clearfix">
 				    <span class="misc-article-time png-img">{{ article.created|timezone:8|date:"Y-m-d H:i:s" }}</span>
             <ul class="be-social-index clearfix">
-              <li><a class="delicious" href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">save to delicious</a></li>
+              <li><a class="delicious" href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">save to delicious</a></li>
               <li><a class="twitter" href="http://twitter.com/home?status=http://{{ site_domain }}/{{ article.title_url|escape }} {{ article.title|escape }}" title="Twitter This" target="_blank" rel="nofollow">Twitter this</a></li>
               <li><a class="douban" href="javascript:var u='http://www.douban.com/recommend/?url='+document.location.href+'&title='+encodeURIComponent(document.title);window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)" title="推荐到豆瓣">推荐到豆瓣</a></li>
               <li><a class="kaixin" href="http://www.kaixin001.com/repaste/share.php?rtitle={{ article.title|escape }}&rurl=http://{{ site_domain }}/{{ article.title_url|escape }}&rcontent={{ article.content|striptags }}" title="转贴到开心网" target="_blank" rel="nofollow">转贴到开心网</a></li>
