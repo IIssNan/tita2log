@@ -198,18 +198,18 @@ class WriterOverviewHandler(webapp.RequestHandler):
         mentions_web = None
     if mentions_web is not None:
       template_values['mentions_web'] = mentions_web.entries
-    mentions_twitter = memcache.get('mentions_twitter')
-    if mentions_twitter is None:    
-      try:
-        result = urlfetch.fetch(TWITTER_API_ROOT + 'search.json?q=' + urllib.quote(q))
-        if result.status_code == 200:
-          mentions_twitter = simplejson.loads(result.content)
-          memcache.add('mentions_twitter', mentions_twitter, 600)
-      except:
-        mentions_twitter = None
-    if mentions_twitter is not None:
-      if len(mentions_twitter['results']) > 0:
-        template_values['mentions_twitter'] = mentions_twitter['results']
+    #mentions_twitter = memcache.get('mentions_twitter')
+    #if mentions_twitter is None:    
+      #try:
+        #result = urlfetch.fetch(TWITTER_API_ROOT + 'search.json?q=' + urllib.quote(q))
+        #if result.status_code == 200:
+          #mentions_twitter = simplejson.loads(result.content)
+          #memcache.add('mentions_twitter', mentions_twitter, 600)
+      #except:
+        #mentions_twitter = None
+    #if mentions_twitter is not None:
+      #if len(mentions_twitter['results']) > 0:
+        #template_values['mentions_twitter'] = mentions_twitter['results']
     template_values['system_version'] = VERSION
     if 'message' in self.session:
       template_values['message'] = self.session['message']
