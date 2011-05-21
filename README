@@ -2,7 +2,6 @@
 
 Theme {Dobule Ks} 版本 0.2, 基于Project-Picky 1.9.1制作。
 
-Demo: http://park.ivanchoi.name
 
 [Theme DoubleKs] 使用几点辅助说明：
 
@@ -12,7 +11,6 @@ Demo: http://park.ivanchoi.name
    
    [使用Shadowbox显示图片元素示例：]
    <a href="image-url" class="img_link" rel="stylesheet"><img src="image-url" alt="" title=""/></a>
-   效果查看：http://park.ivanchoi.name/ivan-choi-name
    
    [使用Shadowbox播放视频元素示例：]
    <div class="movie-wrapper">
@@ -22,7 +20,6 @@ Demo: http://park.ivanchoi.name
      <embed width="480" height="392" type="application/x-shockwave-flash" 
        allowscriptaccess="sameDomain" quality="high" wmode="Opaque" src="video-url">
    </div>
-   效果查看：http://park.ivanchoi.name/dan-ding
 
 
 
